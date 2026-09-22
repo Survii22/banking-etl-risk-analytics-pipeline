@@ -1,13 +1,9 @@
 # 🏦 Banking ETL & Risk Analytics Pipeline
 
-An end-to-end data engineering pipeline that simulates a real-world banking
+An end-to-end data engineering pipeline project build by Suravi Behera that simulates a real-world banking
 data platform: synthetic data generation → ingestion → PySpark ETL →
 automated data quality gating → SQL data warehouse (star schema) → Airflow
 orchestration → Power BI risk & transaction dashboard.
-
-Built as a portfolio project targeting **Deloitte Risk Technology**-style
-roles — the analytical focus throughout is **risk scoring, loan default
-rates, branch performance, and data quality**, not just generic ETL.
 
 > Every phase below has actually been run against 200K+ synthetic
 > transactions in this repo — see `logs/` and `docs/sample_query_outputs.md`
@@ -124,7 +120,7 @@ see `sql/queries.sql` Query 8c and `docs/sample_query_outputs.md`.
 
 ---
 
-## Design notes & Deloitte Risk Technology framing
+## Design notes & Technology framing
 
 - **Intentional data quality issues** are injected at generation time (nulls,
   duplicate IDs, negative amounts, malformed dates, orphan foreign keys) so
