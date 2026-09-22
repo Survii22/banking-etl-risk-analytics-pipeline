@@ -95,7 +95,8 @@ Loan Default Rate % = DIVIDE([Defaulted Loans], [Total Loans], 0) * 100
 
 Total Loan Book = SUM(fact_loan[loan_amount])
 
-Data Quality Score % = MAX(data_quality_log[data_quality_score_pct])
+Data Quality Score % = FORMAT(MAX(data_quality_log[data_quality_score_pct]), "0.0") & "%"
+
 
 -- Time intelligence (works because dim_date is marked as a Date Table)
 Transaction Value MoM % =
@@ -133,8 +134,6 @@ RETURN DIVIDE(CurrentValue - PriorValue, PriorValue, 0) * 100
 - Scatter: `credit_score` (x) vs `risk_score` (y), sized by `total_loan_amount`,
   colored by `risk_tier` — visually demonstrates the risk score is doing its job
 
----
-
 ## 5. Suggested visual polish (screenshot-readiness)
 
 - Apply a consistent theme: View → Themes → pick a clean corporate theme (navy/gold or navy/teal reads well for a "risk/banking" aesthetic)
@@ -154,5 +153,4 @@ the SQL warehouse (Postgres/SQL Server/Snowflake) that `load_to_sql.py`
 populates. Since the Airflow DAG (Phase 5) runs `load_to_sql` as its final
 data step before `pipeline_success`, a Power BI scheduled refresh set to run
 shortly after the DAG's daily schedule keeps the dashboard current
-automatically — worth a sentence in your resume/portfolio write-up as the
-"last mile" of the architecture diagram.
+automatically.
