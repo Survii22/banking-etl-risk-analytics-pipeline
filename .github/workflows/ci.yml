@@ -1,0 +1,54 @@
+name: Banking ETL Pipeline CI
+
+# Runs the full pipeline (data generation -> ingestion -> PySpark ETL ->
+# data quality gate -> SQL warehouse load) and the pytest suite on every
+# push/PR, so a broken change is caught before it reaches main.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  run-pipeline-and-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 (required by PySpark)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run full pipeline end-to-end
+        run: bash run_pipeline.sh
+
+      - name: Upload data quality report as CI artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-quality-report
+          path: |
+            logs/data_quality_report.json
+            logs/data_quality_report.txt
+
+      - name: Upload warehouse as CI artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: banking-warehouse
+          path: warehouse/banking_dw.sqlite

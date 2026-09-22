@@ -1,0 +1,109 @@
+{
+  "run_at": "2026-09-16T11:25:49.639659",
+  "scorecard": {
+    "total_records": 201401,
+    "valid_records": 193955,
+    "rejected_records": 7446,
+    "data_quality_score_pct": 96.3,
+    "quality_gate_threshold_pct": 90.0,
+    "passed_quality_gate": true
+  },
+  "checks": [
+    {
+      "category": "Completeness",
+      "check_name": "Missing Transaction ID",
+      "total_records": 201401,
+      "failed_records": 0,
+      "pass_rate_pct": 100.0,
+      "details": ""
+    },
+    {
+      "category": "Completeness",
+      "check_name": "Missing Account ID (proxy for Customer linkage)",
+      "total_records": 201401,
+      "failed_records": 615,
+      "pass_rate_pct": 99.69,
+      "details": ""
+    },
+    {
+      "category": "Completeness",
+      "check_name": "Missing Transaction Amount",
+      "total_records": 201401,
+      "failed_records": 789,
+      "pass_rate_pct": 99.61,
+      "details": ""
+    },
+    {
+      "category": "Completeness",
+      "check_name": "Missing Transaction Type",
+      "total_records": 201401,
+      "failed_records": 1051,
+      "pass_rate_pct": 99.48,
+      "details": ""
+    },
+    {
+      "category": "Validity",
+      "check_name": "Negative/Invalid/Zero Transaction Amount",
+      "total_records": 201401,
+      "failed_records": 2451,
+      "pass_rate_pct": 98.78,
+      "details": ""
+    },
+    {
+      "category": "Validity",
+      "check_name": "Invalid Transaction Date",
+      "total_records": 201401,
+      "failed_records": 2030,
+      "pass_rate_pct": 98.99,
+      "details": ""
+    },
+    {
+      "category": "Validity",
+      "check_name": "Invalid Transaction Type",
+      "total_records": 201401,
+      "failed_records": 1051,
+      "pass_rate_pct": 99.48,
+      "details": ""
+    },
+    {
+      "category": "Validity",
+      "check_name": "Invalid Account Type",
+      "total_records": 8000,
+      "failed_records": 0,
+      "pass_rate_pct": 100.0,
+      "details": ""
+    },
+    {
+      "category": "Uniqueness",
+      "check_name": "Duplicate Transaction IDs",
+      "total_records": 201401,
+      "failed_records": 2797,
+      "pass_rate_pct": 98.61,
+      "details": ""
+    },
+    {
+      "category": "Uniqueness",
+      "check_name": "Duplicate Customer IDs",
+      "total_records": 5025,
+      "failed_records": 50,
+      "pass_rate_pct": 99.0,
+      "details": ""
+    },
+    {
+      "category": "Consistency",
+      "check_name": "Transaction Account ID not found in Account master",
+      "total_records": 201401,
+      "failed_records": 615,
+      "pass_rate_pct": 99.69,
+      "details": ""
+    },
+    {
+      "category": "Consistency",
+      "check_name": "Account Customer ID not found in Customer master",
+      "total_records": 8000,
+      "failed_records": 0,
+      "pass_rate_pct": 100.0,
+      "details": ""
+    }
+  ]
+}

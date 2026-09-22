@@ -1,0 +1,9 @@
+pandas>=2.0
+pyarrow>=14.0
+Faker>=22.0
+pyspark==3.5.1
+pytest>=7.4
+
+# Optional (only needed if you install and run a local Airflow to execute
+# the DAG in airflow_dags/, per airflow_dags/banking_etl_dag.py docstring):
+# apache-airflow==2.10.5

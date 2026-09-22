@@ -1,0 +1,35 @@
+# --- Generated pipeline data (regenerate via run_pipeline.sh) ---
+raw_data/*.csv
+processed_data/landing/
+processed_data/clean/
+processed_data/rejected/
+warehouse/*.sqlite
+powerbi/data_extracts/*.csv
+
+# --- Logs (keep the sample .txt/.json reports referenced in README; ignore raw run logs) ---
+logs/*.log
+logs/ingestion_*.log
+
+# --- Python ---
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# --- PySpark ---
+spark-warehouse/
+metastore_db/
+derby.log
+
+# --- Airflow (if run locally) ---
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+logs/scheduler/
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
+.idea/

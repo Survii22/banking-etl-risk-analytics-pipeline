@@ -1,0 +1,60 @@
+{
+  "run_at": "2026-09-16T11:18:41.022019",
+  "sources": [
+    {
+      "source_name": "customers",
+      "status": "SUCCESS",
+      "file_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\raw_data\\customers.csv",
+      "row_count": 5025,
+      "column_count": 12,
+      "missing_columns": [],
+      "error": null,
+      "output_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\processed_data\\landing\\customers\\ingest_date=2026-09-16\\customers.parquet",
+      "ingested_at": "2026-09-16T11:18:39.840736"
+    },
+    {
+      "source_name": "branches",
+      "status": "SUCCESS",
+      "file_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\raw_data\\branches.csv",
+      "row_count": 10,
+      "column_count": 4,
+      "missing_columns": [],
+      "error": null,
+      "output_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\processed_data\\landing\\branches\\ingest_date=2026-09-16\\branches.parquet",
+      "ingested_at": "2026-09-16T11:18:39.867982"
+    },
+    {
+      "source_name": "accounts",
+      "status": "SUCCESS",
+      "file_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\raw_data\\accounts.csv",
+      "row_count": 8000,
+      "column_count": 6,
+      "missing_columns": [],
+      "error": null,
+      "output_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\processed_data\\landing\\accounts\\ingest_date=2026-09-16\\accounts.parquet",
+      "ingested_at": "2026-09-16T11:18:39.936213"
+    },
+    {
+      "source_name": "transactions",
+      "status": "SUCCESS",
+      "file_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\raw_data\\transactions.csv",
+      "row_count": 201401,
+      "column_count": 7,
+      "missing_columns": [],
+      "error": null,
+      "output_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\processed_data\\landing\\transactions\\ingest_date=2026-09-16\\transactions.parquet",
+      "ingested_at": "2026-09-16T11:18:40.971467"
+    },
+    {
+      "source_name": "loans",
+      "status": "SUCCESS",
+      "file_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\raw_data\\loans.csv",
+      "row_count": 3000,
+      "column_count": 9,
+      "missing_columns": [],
+      "error": null,
+      "output_path": "C:\\PIPELINE PROJECT\\banking_etl_pipeline\\processed_data\\landing\\loans\\ingest_date=2026-09-16\\loans.parquet",
+      "ingested_at": "2026-09-16T11:18:41.021393"
+    }
+  ]
+}

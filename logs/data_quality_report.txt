@@ -1,0 +1,31 @@
+============================================================
+ BANKING DATA QUALITY SCORECARD
+============================================================
+ Total Records       : 201,401
+ Valid Records       : 193,955
+ Rejected Records    : 7,446
+ Data Quality Score  : 96.3%
+ Quality Gate (90.0%)  : PASSED
+============================================================
+
+ Detail by category:
+------------------------------------------------------------
+ Completeness:
+   - Missing Transaction ID                                  failed=      0  pass_rate=100.0%
+   - Missing Account ID (proxy for Customer linkage)         failed=    615  pass_rate=99.69%
+   - Missing Transaction Amount                              failed=    789  pass_rate=99.61%
+   - Missing Transaction Type                                failed=  1,051  pass_rate=99.48%
+
+ Validity:
+   - Negative/Invalid/Zero Transaction Amount                failed=  2,451  pass_rate=98.78%
+   - Invalid Transaction Date                                failed=  2,030  pass_rate=98.99%
+   - Invalid Transaction Type                                failed=  1,051  pass_rate=99.48%
+   - Invalid Account Type                                    failed=      0  pass_rate=100.0%
+
+ Uniqueness:
+   - Duplicate Transaction IDs                               failed=  2,797  pass_rate=98.61%
+   - Duplicate Customer IDs                                  failed=     50  pass_rate=99.0%
+
+ Consistency:
+   - Transaction Account ID not found in Account master      failed=    615  pass_rate=99.69%
+   - Account Customer ID not found in Customer master        failed=      0  pass_rate=100.0%

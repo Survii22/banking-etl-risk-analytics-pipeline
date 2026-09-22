@@ -1,0 +1,54 @@
+2026-09-16 14:26:50,245 | INFO     | ======================================================================
+2026-09-16 14:26:50,245 | INFO     | STARTING PYSPARK ETL RUN (Phase 2)
+2026-09-16 14:26:50,245 | INFO     | ======================================================================
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2026-09-16 14:26:56,513 | INFO     | Using ingest_date partition: 2026-09-16
+2026-09-16 14:27:04,612 | INFO     | customers: 5,025 -> 5,000 valid, 0 rejected
+2026-09-16 14:27:04,858 | INFO     | branches: 10 rows after dedup
+2026-09-16 14:27:05,606 | INFO     | accounts: 8,000 -> 8,000 valid, 0 rejected
+2026-09-16 14:27:18,956 | INFO     | transactions: 201,401 -> 193,955 valid, 5,225 rejected (includes duplicate-ID conflicts routed to rejects)
+2026-09-16 14:27:19,465 | INFO     | loans: 3,000 -> 3,000 valid, 0 rejected
+2026-09-16 14:27:24,933 | INFO     | transactions: routed 0 orphan-account rows to rejects
+2026-09-16 14:28:05,511 | INFO     | Clean zone written to C:\PIPELINE PROJECT\banking_etl_pipeline\processed_data\clean
+2026-09-16 14:28:05,511 | INFO     | Rejected records written to C:\PIPELINE PROJECT\banking_etl_pipeline\processed_data\rejected
+2026-09-16 14:28:05,511 | INFO     | PYSPARK ETL RUN COMPLETE
+2026-09-16 14:28:05,511 | INFO     | ======================================================================
+26/09/16 14:28:05 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\surav\AppData\Local\Temp\spark-ed0b0866-5214-4898-91de-dd2e5e6822b5\pyspark-93a2e350-3ef6-48a5-83eb-d978bbbdab4b
+java.nio.file.NoSuchFileException: C:\Users\surav\AppData\Local\Temp\spark-ed0b0866-5214-4898-91de-dd2e5e6822b5\pyspark-93a2e350-3ef6-48a5-83eb-d978bbbdab4b
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+SUCCESS: The process with PID 9376 (child process of PID 18864) has been terminated.
+SUCCESS: The process with PID 18864 (child process of PID 19080) has been terminated.
+SUCCESS: The process with PID 19080 (child process of PID 5824) has been terminated.
