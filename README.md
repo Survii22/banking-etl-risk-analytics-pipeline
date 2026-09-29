@@ -169,8 +169,12 @@ relationship. All 21 tests pass against the live warehouse.
 
 ## Power BI dashboard
 
-Power BI Desktop is Windows-only and can't run in this environment, so
-`powerbi/README.md` is the complete build spec (data model, relationships,
-DAX measures, page-by-page layout) and `powerbi/data_extracts/*.csv` are the
-verified, ready-to-import data files — every number in them has already been
-validated by the pipeline and the test suite above.
+Built in Power BI Desktop on top of the warehouse tables (star schema, 15 DAX measures, 3 report pages).
+
+![Executive Overview](docs/images/executive_overview.png)
+![Transaction Analysis](docs/images/transaction_analysis.png)
+![Risk Analysis](docs/images/risk_analysis.png)
+
+**Download:** [Banking_Risk_Dashboard.pbix](powerbi/Banking_Risk_Dashboard.pbix) | [PDF export](powerbi/Banking_Risk_Dashboard.pdf)
+
+The dashboard data comes from the warehouse tables, which `bash run_pipeline.sh` regenerates and exports to `powerbi/data_extracts/`.
